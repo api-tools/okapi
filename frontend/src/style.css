@@ -324,7 +324,7 @@ body {
 }
 
 /* error modal window styles */
-.modal-error-bg {
+.modal-bg {
     position: absolute;
     z-index: 100;
     top: 0;
@@ -340,7 +340,7 @@ body {
     right: 0;
 }
 
-.modal-error-container {
+.modal-container {
     position: absolute;
     z-index: 100;
     top: 0;
@@ -351,7 +351,7 @@ body {
     vertical-align: middle;
 }
 
-.modal-error-window {
+.modal-window {
     opacity: 1;
     width: 500px;
     background-color: white;
@@ -361,15 +361,15 @@ body {
     border: 1px solid #9e9e9e;
 }
 
-.error-title {
+.modal-title {
     font-weight: 600;
 }
 
-.error-close {
+.modal-close {
     cursor: pointer;
 }
 
-.error-close:hover {
+.modal-close:hover {
     opacity: 0.5;
 }
 

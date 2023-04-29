@@ -51,21 +51,40 @@
         </div>
     </div>
     <div class="modal-error" v-show="ErrorHandler.hasError()">
-        <div class="modal-error-bg">
+        <div class="modal-bg">
         </div>
-        <div class="modal-error-container wh100pc">
-            <div class="modal-error-window">
+        <div class="modal-container wh100pc">
+            <div class="modal-window">
                 <div class="flex-justify" style="border-bottom: 1px solid #e3e3e3">
-                    <div class="pad1 error-title">
+                    <div class="pad1 modal-title">
                         <span v-if="ErrorHandler.errorTitle">{{ ErrorHandler.errorTitle }}</span>
                         <span v-else>An error has occurred</span>
                     </div>
                     <div class="pad1">
-                        <img src="@/assets/images/ico-close.svg" alt="close" class="error-close" @click="this.closeError()">
+                        <img src="@/assets/images/ico-close.svg" alt="close" class="modal-close" @click="this.closeError()">
                     </div>
                 </div>
                 <div class="pad1 txtl">
                     {{ ErrorHandler.errorMessage }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-import" v-show="ImportHandler.isVisible()">
+        <div class="modal-bg">
+        </div>
+        <div class="modal-container wh100pc">
+            <div class="modal-window">
+                <div class="flex-justify" style="border-bottom: 1px solid #e3e3e3">
+                    <div class="pad1 modal-title">
+                        <span>{{ ImportHandler.modalTitle }}</span>
+                    </div>
+                    <div class="pad1">
+                        <img src="@/assets/images/ico-close.svg" alt="close" class="modal-close" @click="this.closeImport()">
+                    </div>
+                </div>
+                <div class="pad1 txtl">
+                    {{ ImportHandler.modalMessage }}
                 </div>
             </div>
         </div>
@@ -80,6 +99,7 @@ import TabContent from "@/components/TabContent.vue";
 import {markRaw} from "vue";
 import {TabContainer} from "@/handlers/TabContainer.ts";
 import {ErrorHandler} from "@/handlers/ErrorHandler.ts";
+import {ImportHandler} from "@/handlers/ImportHandler.ts";
 
 export default {
     components: {
@@ -89,6 +109,7 @@ export default {
     data() {
         return {
             ErrorHandler,
+            ImportHandler,
             TabContainer,
             resizeHandler: null,
             errorHandler: null,
@@ -101,6 +122,9 @@ export default {
     methods: {
         closeError() {
             ErrorHandler.clearError()
+        },
+        closeImport() {
+            ImportHandler.closeModalImport()
         }
     }
 };

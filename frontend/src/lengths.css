@@ -1,0 +1,71 @@
+.w100pc {
+    width: 100%;
+}
+
+.w80pc {
+    width: 80%;
+}
+
+.w20pc {
+    width: 20%;
+}
+
+.h100pc {
+    height: 100%;
+}
+
+.pl05 {
+    padding-left: 0.5rem;
+}
+
+.pr05 {
+    padding-right: 0.5rem;
+}
+
+.pad05 {
+    padding: 0.5rem;
+}
+
+.pad1 {
+    padding: 1rem;
+}
+
+.mar1 {
+    margin: 1rem;
+}
+
+.marl1 {
+    margin-left: 1rem;
+}
+
+.marl05 {
+    margin-left: 0.5rem;
+}
+
+.marr05 {
+    margin-right: 0.5rem;
+}
+
+.padl05 {
+    padding-left: 0.5rem;
+}
+
+.padl1 {
+    padding-left: 1rem;
+}
+
+.padt1 {
+    padding-top: 1rem;
+}
+
+.padr1 {
+    padding-right: 1rem;
+}
+
+.w5 {
+    width: 5rem
+}
+
+.w2-5 {
+    width: 2.5rem;
+}

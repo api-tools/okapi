@@ -1,0 +1,9 @@
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <line stroke="#000000" stroke-width="1.5" id="svg_20" y2="17.11658" x2="2.83403" y1="10.44738" x1="2.83403" fill="none"/>
+  <line stroke="#000000" stroke-width="1.5" id="svg_21" y2="16.52721" x2="2.07063" y1="16.52721" x1="17.92937" fill="none"/>
+  <line stroke="#000000" stroke-width="1.5" id="svg_22" y2="17.11658" x2="17.16597" y1="10.44738" x1="17.16597" fill="none"/>
+  <path stroke="#000000" stroke-width="1.5" id="svg_23" d="m14.90497,7.89251l-5.0019,4.9851l-5.0019,-4.9851l2.50095,0l0,-5.00909l5.0019,0l0,5.00909l2.50095,0z" fill="none"/>
+ </g>
+</svg>

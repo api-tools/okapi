@@ -1,0 +1,38 @@
+name: default collection
+structure:
+  - type: folder
+    id: 1033194561bd50e1a395320d7c8baefd
+    name: folder one
+    items:
+      - type: folder
+        id: 6190bc684fa2fefab61b30a4a9e430bd
+        name: two endpoints
+        items:
+          - type: request
+            id: 4146687e500ebfbfea8b152b19cc967b
+            name: e1
+            url: "http://localhost:8001/example6"
+          - type: request
+            id: 0743b3b39391c6d44337d4b53f259d1f
+            name: e2
+            url: "http://localhost:8001/example8"
+      - type: request
+        id: a9ae08329d91347be53a5d5a07b33967
+        name: e3ser dyh dyhdhdd gd dfthtdt
+        url: "http://localhost:8001/example5"
+  - type: folder
+    id: 334f8e3ca52670749bd951342881b600
+    name: folder one
+    items:
+      - type: request
+        id: 57d0ccdfa6341046cf13fea039f05e56
+        name: e31
+        url: "http://localhost:8001/example1"
+      - type: request
+        id: 243f5783a45e5b41d64038a727c35093
+        name: e32
+        url: "http://localhost:8001/example2"
+      - type: request
+        id: 2f987832a75a2dc6f5846a7d72c630e4
+        name: e33
+        url: "http://localhost:8001/example3"

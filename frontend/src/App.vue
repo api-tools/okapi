@@ -20,7 +20,15 @@
                                         <div v-for="(tab, index) in TabContainer.tabs" :key="index"
                                              @click="TabContainer.setActiveTab(tab.id)">
                                             <div :class="tab.id === TabContainer.activeTab ? 'active pad05 tab-head' : 'pad05 tab-head'">
-                                                {{ tab.name }}
+                                                <div class="flex-justify">
+                                                    <div class="ellipsis">
+                                                        {{ tab.name }}
+                                                    </div>
+                                                    <div class="flex-items-center ico">
+                                                        <img src="@/assets/images/ico-close.svg" alt="close"
+                                                             @click="this.closeTab(tab.id)">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -45,8 +53,8 @@
             </div>
             <div class="splitter-horizontal"></div>
             <div class="wh100pc overflow-hidden h-auto flex-justify pad1">
-                <div class="flex">LEFT BOTTOM</div>
-                <div class="flex">RIGHT BOTTOM</div>
+                <div class="flex">Settings</div>
+                <div class="flex">*</div>
             </div>
         </div>
     </div>
@@ -61,7 +69,8 @@
                         <span v-else>An error has occurred</span>
                     </div>
                     <div class="pad1">
-                        <img src="@/assets/images/ico-close.svg" alt="close" class="modal-close" @click="this.closeError()">
+                        <img src="@/assets/images/ico-close.svg" alt="close" class="modal-close"
+                             @click="this.closeError()">
                     </div>
                 </div>
                 <div class="pad1 txtl">
@@ -80,7 +89,8 @@
                         <span>{{ ImportHandler.modalTitle }}</span>
                     </div>
                     <div class="pad1">
-                        <img src="@/assets/images/ico-close.svg" alt="close" class="modal-close" @click="this.closeImport()">
+                        <img src="@/assets/images/ico-close.svg" alt="close" class="modal-close"
+                             @click="this.closeImport()">
                     </div>
                 </div>
                 <div class="pad1 txtl">
@@ -125,6 +135,9 @@ export default {
         },
         closeImport() {
             ImportHandler.closeModalImport()
+        },
+        closeTab(id) {
+            TabContainer.closeTab(id)
         }
     }
 };

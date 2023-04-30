@@ -32,4 +32,9 @@ export const TabContainer = reactive({
         this.tabs.push(newTab);
         this.activeTab = data.id;
     },
+    closeTab(id: string) {
+        this.tabs = _.without(this.tabs, _.findWhere(this.tabs, {
+            id: id
+        }));
+    }
 });

@@ -90,14 +90,6 @@ body {
     height: 100vh;
 }
 
-.flex {
-    display: flex;
-}
-
-.flex-1 {
-    flex: 1 1 0;
-}
-
 .border {
     border-width: 1px;
 }
@@ -112,6 +104,14 @@ body {
     width: 100%;
     height: 100%;
 }
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* tabs */
 
 .tab-head {
     background-color: var(--col-light-one);
@@ -134,11 +134,36 @@ body {
     min-width: 15rem;
 }
 
+/* flex */
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1 1 0;
+}
+
 .flex-row {
     flex-direction: row;
     display: flex;
     width: 100%;
     height: 100%;
+}
+
+.flex-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.flex-nowrap {
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 
 .whitespace-nowrap {
@@ -157,15 +182,6 @@ body {
     border-radius: 0 0.25rem 0.25rem 0;
 }
 
-.flex-none {
-    flex: none;
-}
-
-.flex-nowrap {
-    -ms-flex-wrap: nowrap;
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-}
 
 .link-endpoint {
     cursor: pointer;

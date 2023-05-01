@@ -25,8 +25,18 @@
                                                         {{ tab.name }}
                                                     </div>
                                                     <div class="flex-items-center ico">
-                                                        <img src="@/assets/images/ico-close.svg" alt="close"
-                                                             @click="this.closeTab(tab.id)">
+                                                        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" @click="this.closeTab(tab.id)" class="pointer">
+                                                            <g id="Layer_1">
+                                                                <title>Layer 1</title>
+                                                                <g stroke="null" id="svg_3">
+                                                                    <rect stroke="#000000" rx="2" id="svg_1" height="11.15869" width="11.15869"
+                                                                          y="2.42066" x="2.42066" fill="none" class="ico-svg" />
+                                                                    <path stroke="null" stroke-width="0" id="ico-close" class="ico-svg"
+                                                                          d="m11.18281,10.1022l-2.10201,-2.10201l2.10163,-2.10201l-1.08042,-1.08119l-2.10201,2.10201l-2.10201,-2.10201l-1.08042,1.08119l2.10163,2.10201l-2.10201,2.10201l1.08119,1.0808l2.10163,-2.10201l2.10163,2.10201"
+                                                                          fill="#000000"/>
+                                                                </g>
+                                                            </g>
+                                                        </svg>
                                                     </div>
                                                 </div>
                                             </div>
@@ -53,8 +63,10 @@
             </div>
             <div class="splitter-horizontal"></div>
             <div class="wh100pc overflow-hidden h-auto flex-justify pad1">
-                <div class="flex">Settings</div>
-                <div class="flex">*</div>
+                <div class="flex">Collections</div>
+                <div class="flex">
+                    <span @click="this.showSettings()">Settings</span>
+                </div>
             </div>
         </div>
     </div>
@@ -99,6 +111,7 @@
             </div>
         </div>
     </div>
+    <SettingsModal @close="this.closeSettings()" />
 </template>
 
 <script>
@@ -110,9 +123,12 @@ import {markRaw} from "vue";
 import {TabContainer} from "@/handlers/TabContainer.ts";
 import {ErrorHandler} from "@/handlers/ErrorHandler.ts";
 import {ImportHandler} from "@/handlers/ImportHandler.ts";
+import {SettingsHandler} from "@/handlers/modals/SettingsHandler.ts";
+import SettingsModal from "@/components/modals/SettingsModal.vue";
 
 export default {
     components: {
+        SettingsModal,
         MenuLeft,
         TabContent: markRaw(TabContent),
     },
@@ -120,6 +136,7 @@ export default {
         return {
             ErrorHandler,
             ImportHandler,
+            SettingsHandler,
             TabContainer,
             resizeHandler: null,
             errorHandler: null,
@@ -128,6 +145,7 @@ export default {
     },
     mounted() {
         this.resizeHandler = new ResizeHandler(window.document)
+        SettingsHandler.load()
     },
     methods: {
         closeError() {
@@ -138,17 +156,17 @@ export default {
         },
         closeTab(id) {
             TabContainer.closeTab(id)
+        },
+        showSettings() {
+            SettingsHandler.open()
+        },
+        closeSettings() {
+            SettingsHandler.close()
         }
     }
 };
 </script>
 
 <style>
-.bar-url, .bar-method {
-    background-color: var(--col-light-one);
-}
 
-.bar-method {
-    cursor: pointer;
-}
 </style>

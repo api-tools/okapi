@@ -4,4 +4,8 @@ import {main} from '../models';
 
 export function LoadCollection():Promise<main.Collection>;
 
+export function LoadConfig():Promise<main.Config>;
+
+export function SaveConfig(arg1:string):Promise<void>;
+
 export function Send(arg1:string):Promise<main.Response>;

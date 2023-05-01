@@ -3,7 +3,13 @@
         <div v-if="type === 'folder'">
             <div class="tree-item flex">
                 <div>
-                    <img src="@/assets/images/ico-folder.svg" alt="folder">
+                    <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Layer_1">
+                            <title>Layer 1</title>
+                            <path stroke-width="0" class="ico-svg"
+                                  d="m17.97694,7.46412c-0.00237,-1.30777 -1.06138,-2.36737 -2.36856,-2.36915l0,-0.00059l-7.25967,0c-0.29911,-0.96069 -1.19109,-1.66314 -2.25366,-1.66492l-1.70283,0c-1.30777,0.00118 -2.36738,1.06138 -2.36974,2.36915l0,8.40338c0.00237,1.30659 1.06197,2.36619 2.36974,2.36856l11.21675,0c1.306,-0.00237 2.36619,-1.06197 2.36856,-2.36856l0,-6.73787l-0.00059,0zm-13.58472,-2.85068l1.70283,0c0.61953,-0.00237 1.13542,0.49397 1.17451,1.11113l0.03435,0.55497l8.30506,0c0.64737,0.00118 1.1828,0.53661 1.18398,1.18458l0,0.29318c-0.35004,-0.20434 -0.75102,-0.3299 -1.18458,-0.3305l-11.21675,0c-0.43355,0.00059 -0.83513,0.12675 -1.18458,0.33109l0,-1.95988c0.00178,-0.64796 0.53721,-1.18339 1.18517,-1.18458zm11.21616,10.77253l-11.21616,0c-0.64737,-0.00118 -1.1828,-0.5378 -1.18517,-1.18458l0,-4.40544l0.00059,0c0.00118,-0.64856 0.53661,-1.18398 1.18458,-1.18517l11.21675,0c0.64737,0.00118 1.17925,0.53365 1.18458,1.17925l0,4.41077c-0.00237,0.64856 -0.5378,1.18398 -1.18517,1.18517z" />
+                        </g>
+                    </svg>
                 </div>
                 <div class="padl05">
                     {{ name }}
@@ -28,7 +34,7 @@
                 <span @click="this.dispatchTabRequest(this)">
                     {{ name }}
                 </span>
-<!--                <span><input type="text"/></span>-->
+                <!--                <span><input type="text"/></span>-->
             </div>
         </div>
     </div>
@@ -85,7 +91,7 @@ export default {
 <style lang="less" scoped>
 .tree-subitem {
   margin-left: 10px;
-  border-left: 1px solid var(--col-bg-light-hover);
+  border-left: 1px solid var(--col-splitter);
   padding-left: 1rem;
 }
 
@@ -95,7 +101,7 @@ export default {
 }
 
 .tree-item-request-method {
-  color: var(--col-blue-hover);
+  color: var(--col-menu-request-method);
   font-weight: 100;
   margin-right: 0.5rem;
   font-size: 0.7rem;

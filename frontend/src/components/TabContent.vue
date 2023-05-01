@@ -6,7 +6,7 @@
                     <div class="flex pad1">
                         <div class="bar-method flex pad05 border-no-right rounded-l">GET</div>
                         <div class="bar-url flex flex-1 border whitespace-nowrap rounded-r padl1">
-                            <input type="text" class="url-input flex-1" v-bind:value="url" id="request-url">
+                            <input type="text" class="text-input flex-1" v-bind:value="url" id="request-url">
                         </div>
                         <div class="flex marl05">
                             <button class="btn-send relative rounded pad05 w5" @click="fetchData()">send</button>

@@ -1,6 +1,7 @@
 export namespace main {
 	
 	
+	
 	export class ResponseError {
 	    type: string;
 	    description: string;

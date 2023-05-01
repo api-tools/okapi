@@ -1,25 +1,42 @@
 :root {
-    --col-bg-dark: #1e1e26;
-    --col-bg-light: #f2f2f2;
-    --col-bg-light-hover: #e9e9e9;
-    --line-height-body: 1rem;
+    --col-background: #fff;
+    --col-text: #525252;
+    --col-ico: #1f1f1f;
+    --col-splitter: #d9d9d9;
+    --col-input-text-bg: #fbfbfb;
+    --col-border: #e5e7eb;
 
-    --col-light: #d9d9d9;
-    --col-light-one: #fbfbfb;
-    --col-white: #fff;
-    --col-blue-light: #7777ff;
-    --col-blue-hover: #5c5cff;
+    --col-tab-active: #fff;
+    --col-tab-inactive: #f7f7f7;
+    --col-tab-hover: #fff;
 
-    --col-txt-gray: #858585;
+    --col-menu-request-method: #3c4fff;
+    --col-accent: #6878ff;
+}
 
-    --col-blue-lighter: #8e8eff
+:root.dark-mode {
+    --col-background: #2e3134;
+    --col-text: #fff;
+    --col-ico: #9f9f9f;
+    --col-splitter: rgba(101, 101, 101, 0.69);
+    --col-input-text-bg: rgb(40, 40, 40);
+    --col-input-text: #fff;
+    --col-border: rgba(101, 101, 101, 0.69);
+
+    --col-tab-active: #454545;
+    --col-tab-inactive: #2f2f2f;
+    --col-tab-hover: #454545;
+
+    --col-menu-request-method: #a4a4a4;
+    --col-accent: #6878ff;
+    --col-accent-hover: #808dff;
 }
 
 html {
-    background: var(--col-white);
+    background: var(--col-background);
     scroll-behavior: smooth;
     overflow-x: hidden;
-    color: var(--col-bg-dark);
+    color: var(--col-text);
     font-family: "Quicksand", "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -33,6 +50,19 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+path.ico-svg {
+    fill: var(--col-ico);
+}
+
+svg rect.ico-svg {
+    stroke: var(--col-ico);
+}
+
+/* colors only */
+.bg-text-input {
+    background-color: var(--col-input-text-bg);
 }
 
 /* latin-ext */
@@ -62,7 +92,7 @@ body {
     box-sizing: border-box;
     border-width: 0;
     border-style: solid;
-    border-color: #e5e7eb
+    border-color: var(--col-border);
 }
 
 .col-bg-light {
@@ -114,20 +144,22 @@ body {
 /* tabs */
 
 .tab-head {
-    background-color: var(--col-light-one);
     width: 10rem;
-    border-right: 1px solid var(--col-light);
-    border-bottom: 1px solid var(--col-light-one);
+    border-right: 1px solid var(--col-splitter);
     cursor: pointer;
     user-select: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    background-color: var(--col-tab-inactive);
 }
 
 .tab-head.active {
-    border-bottom: 1px solid blue;
-    background-color: var(--col-white);
+    background-color: var(--col-tab-active);
+}
+
+.tab-head:hover {
+    background-color: var(--col-tab-hover);
 }
 
 .menu-left {
@@ -207,7 +239,7 @@ body {
 .splitter-horizontal {
     height: 0;
     pointer-events: none;
-    background-color: var(--col-light);
+    background-color: var(--col-splitter);
     position: relative;
     min-height: 1px;
     cursor: row-resize;
@@ -216,7 +248,7 @@ body {
 .splitter-vertical {
     width: 0;
     pointer-events: none;
-    background-color: var(--col-light);
+    background-color: var(--col-splitter);
     position: relative;
     min-width: 1px;
     cursor: col-resize;
@@ -309,7 +341,7 @@ body {
 }
 
 .btn-send {
-    background-color: var(--col-blue-light);
+    background-color: var(--col-accent);
     color: white;
     cursor: pointer;
     font-family: inherit;
@@ -317,14 +349,15 @@ body {
 }
 
 .btn-send:hover {
-    background-color: var(--col-blue-hover);
+    background-color: var(--col-accent-hover);
 }
 
-.url-input {
+.text-input {
     background: transparent;
     font-family: inherit;
     font-size: inherit;
     outline: none;
+    color: var(--col-input-text);
 }
 
 .flex-dir-col {
@@ -349,7 +382,7 @@ body {
     background-color: black;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.7;
     vertical-align: middle;
     text-align: center;
     left: 0;
@@ -370,11 +403,15 @@ body {
 .modal-window {
     opacity: 1;
     width: 500px;
-    background-color: white;
+    background-color: var(--col-background);
     margin: 100px auto;
     border-radius: 10px;
     position: relative;
-    border: 1px solid #9e9e9e;
+    border: 1px solid var(--col-border);
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .modal-title {
@@ -408,11 +445,19 @@ body {
 }
 
 .menu-left-button {
-    background-color: var(--col-bg-light);
     color: var(--col-txt-gray);
-    border: 1px solid var(--col-light);
     cursor: pointer;
     font-size: inherit;
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     border-radius: 0.2rem;
+}
+
+/* URL bar section */
+.bar-url, .bar-method {
+    background-color: var(--col-input-text-bg);
+    color: var(--col-input-text);
+}
+
+.bar-method {
+    cursor: pointer;
 }
